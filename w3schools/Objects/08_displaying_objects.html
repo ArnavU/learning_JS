@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displaying objects</title>
+    <style>
+        * {
+            margin-top: 0px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0px;
+        }
+        body {
+            background-color: gray;
+        }
+
+        #note {
+            background-color: #FFF4A3;
+            padding: 20px;
+            width: 400px;
+        }
+        </style>
+</head>
+
+<body>
+    <h2>Some common solutions to display JavaScript objects are:</h2>
+    <ul>
+        <li>Displaying the Object Properties by <b>name</b></li>
+        <li>Displaying the Object Properties <b>in a Loop</b></li>
+        <li>Displaying the Object using <b>Object.values()</b></li>
+        <li>Displaying the Object using <b>JSON.stringify()</b></li>
+    </ul>
+
+    <h3>Directly displaying the object: </h3>
+    <p id="id-01"></p>
+
+    <h3>Displaying the Object Properties by name: </h3>
+    <p id="id-02"></p>
+
+    <h3>Displaying in loop: </h3>
+    <p id="id-03"></p>
+
+    <p id="note">You must use <b>person[x]</b> in the loop. <br>
+    <b>person.x</b> will not work (Because <b>x</b> is a variable).
+    </p>
+
+    <h3>Using Object.values()</h3>
+    <p>Any JavaScript object can be converted to an array using Object.values():</p>
+    <p id="id-04"></p>
+
+    <h3>Using JSON.stringify()</h3>
+    <p>Any JavaScript object can be stringified (converted to a string) with the JavaScript function JSON.stringify():</p>
+    <p id="id-05"></p>
+
+    <h3>Stringify Dates: </h3>
+    <p id="id-date"></p>
+
+    <h3>Stringify Functions: </h3>
+    <p>JSON.stringify will not stringify functions: </p>
+    <p id="id-func_Stringify"></p>
+    <p>This can be "fixed" if you convert the functions into strings before stringifying.</p>
+    <p id="id-func_stringify-02"></p>
+    <script>
+        const person = {
+            fname: "Aranv",
+            lname: "Umarakr",
+            age: 20,
+            city: "Wardha"
+        }
+
+        // Displaying object directly -- o/p [Object Object]
+        document.getElementById('id-01').innerHTML = "person: " + person;
+
+        // Displaying object properties by name
+        document.getElementById("id-02").innerHTML = person.fname + "," + person.lname + "," + person.age + "," + person.city;
+
+        // Displaying object properties in loop 
+        let text = "";
+        for (let x in person) {
+            text += person[x] + " ";
+        }
+        document.getElementById("id-03").innerHTML = text;
+
+        // Displaying using Object.values()
+        let myArray = Object.values(person);
+        document.getElementById("id-04").innerHTML = myArray;
+        
+        // Displaying using JSON.stringify()
+        let myString = JSON.stringify(person);
+        document.getElementById("id-05").innerHTML = myString;
+
+        // JSON.stringify() can also stringify dates
+        let obj = {
+            name: "Arnav",
+            date: new Date()
+        }
+        myString = JSON.stringify(obj);
+        document.getElementById('id-date').innerHTML = myString;
+
+        // JSON.stringify() can also stringify functions
+        // first add the function to the object
+        // JSON.stringify will not stringify functions directily: 
+        person.fullName = function() {
+            return this.fname + this.lname;
+        }
+        myString = JSON.stringify(person);
+        document.getElementById("id-func_Stringify").innerHTML = myString;
+
+        // Stringifying function
+        person.fullName = person.fullName.toString();
+        myString = JSON.stringify(person);
+        document.getElementById("id-func_stringify-02").innerHTML = myString;
+    </script>
+
+
+
+
+</body>
+
+</html>

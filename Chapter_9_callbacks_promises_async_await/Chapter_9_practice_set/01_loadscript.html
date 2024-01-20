@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    
+
+    <script>
+        async function loadScript(src) {
+            return new Promise((resolve)=> {
+                let script = document.createElement('script');
+                script.src = src;
+                document.head.appendChild(script);
+                script.onload = ()=> {
+                    resolve(src + " Done Success!");
+                }
+            })
+        }
+
+        // Problem 1
+        // ---------------------------------- laodScript using .then() ----------------------------------
+        // let p = loadScript("https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js");
+
+        // console.log(new Date().getMilliseconds());
+        // p.then((result)=> {
+            //     console.log(result);
+            //     console.log(new Date().getMilliseconds());
+        // })
+            
+        // Problem 2
+        // -------------------------------- loadScript using async await --------------------------------
+        // const main2 = async ()=> {
+        //     console.log(new Date().getMilliseconds());
+        //     let p = await loadScript("https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js");
+        //     console.log(p);
+        //     console.log(new Date().getMilliseconds());
+        // }
+        // main2();
+
+        // Problem 3
+        // -------------------------- handle the rejected value using try catch --------------------------
+        // let promise_func = async ()=> {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             reject(new Error("This is now permissible!"));
+        //         }, 3000);
+        //     })
+        // }
+
+        // async function myFunc() {
+        //     try {
+        //         let p = await promise_func();
+        //     }
+        //     catch(error) {
+        //         console.log("This error has been handled");
+        //     }
+        // }
+
+        // myFunc();
+
+        // Problem 4
+        let func1 = async ()=> {
+            return new Promise((resolve) => {
+                setTimeout(()=> {
+                    resolve("Value 1");
+                }, 3000);
+            })
+        }
+
+        let func2 = async ()=> {
+            return new Promise((resolve) => {
+                setTimeout(()=> {
+                    resolve("Value 2");
+                }, 2000);
+            })
+        }
+
+        let func3 = async ()=> {
+            return new Promise((resolve) => {
+                setTimeout(()=> {
+                    resolve("Value 3");
+                }, 1000);
+            })
+        }
+
+        let main2 = async ()=> {
+            // ----------- appraoch 1 -----------
+            // --waiting for promises to resolve one by one-- (6ms)
+            // console.time("run");
+            // let p1 = await func1();
+            // let p2 = await func2();
+            // let p3 = await func3();
+            // console.log(p1, p2, p3);
+            // console.timeEnd("run");
+
+            // ---------- approach 2 ----------
+            // --parallel execution-- (3ms)
+            console.time("run");
+            let p1 = func1();
+            let p2 = func2();
+            let p3 = func3();
+            let p = await Promise.all([p1, p2, p3]);
+            console.log(p);
+            console.timeEnd("run");
+        }
+
+        main2();
+
+    </script>
+</body>
+</html>

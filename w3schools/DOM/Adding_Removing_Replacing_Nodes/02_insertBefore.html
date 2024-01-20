@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertBefore()</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        #myDiv {
+            width: 200px;
+            border: 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>JavaScript HTML DOM</h2>
+    <h3>Add a new HTML Element.</h3>
+
+    <div id="myDiv">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div>
+
+    <script>
+        const newPara = document.createElement("p");
+        const text = document.createTextNode("This is new.");
+        newPara.appendChild(text);
+
+        const element = document.getElementById("myDiv");
+        const para = document.getElementById("p2");
+        element.insertBefore(newPara, para);  
+
+        // parentElement.insertBefore(newElement, existing_element);
+        
+    </script>
+
+</body>
+
+</html>

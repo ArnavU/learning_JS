@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String methods</title>
+    <style>
+        body {
+            background-color: gray  ;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+// ----------------------- length (property) -----------------------
+        let str = "JavaScript is a Great Language";
+        let len = str.length;
+        document.write("length -- " + len);
+
+// ---------------- toLowerCase() and toUpperCase() ----------------
+        let strL = str.toLowerCase();
+        document.write("<br> toLowerCase -- " + strL);
+
+        let strU = str.toUpperCase();
+        document.write("<br> toUpperCase -- " + strU);
+
+// -------------------------- includes() --------------------------
+        let result = str.includes("ipt");
+        document.write("<br> includes -- " + result);
+
+// ----------------- startsWith() and endsWith() ------------------
+        result = str.startsWith("Java");
+        document.write("<br> startsWith -- " + result);
+
+        result = str.endsWith("anguage");
+        document.write("<br> endsWith -- " + result);
+
+// --------------------------- search() ----------------------------
+        result = str.search("Great"); // returns index of first occurance
+        document.write("<br> search -- " + result);
+
+// ---------------------------- match() ----------------------------
+        let str2 = "JavaScript is a Great is a language";
+        let arr = str2.match(/is/g); // regular expressions?
+        document.write("<br> match -- " + arr);
+
+        // console.log(Array.isArray(arr)); => true
+        // console.log(Array.isArray(str2)); => false
+
+// ------------------ indexOf() and lastIndexOf() ------------------
+        result = str2.indexOf("is", 12);
+        document.write("<br> indexOf -- " + result);
+
+        result = str2.lastIndexOf("is");
+        document.write("<br> lastIndexOf -- " + result);
+        
+// --------------------------- replace() ---------------------------
+        let replaceStr = str2.replace("JavaScript", "'C++'");
+        document.write("<br> replace -- " + replaceStr);
+
+        replaceStr = str2.replace(/is/g, "'are'"); // instead use replaceAll()
+        document.write("<br> replace -- " + replaceStr);
+
+// ----------------------------- trim() ----------------------------
+        let toTrim = "       Arnav        Umarkar     ";
+        let trimmed = toTrim.trim();
+        document.write("<br> trim -- " + trimmed);
+        
+// --------------------------- charAt() ----------------------------
+        let newStr = "My name is Arnav Umarkar";
+        let ch = newStr.charAt(3);
+        document.write("<br> charAt() -- ", ch);
+        
+// -------------------------- charCodeAt() -------------------------
+        ch = newStr.charCodeAt(1);
+        document.write("<br> charCodeAt() -- " + ch);
+
+
+// ------------------------- fromCharCode() ------------------------
+        ch = String.fromCharCode(212);
+        document.write("<br> fromCharCode() -- " + ch);
+
+// ---------------------------- concat() ---------------------------
+        let s1 = "My name ";
+        let s2 = "is ";
+        let s3 = "Arnav";
+        
+        let s4 = s1.concat(s2, s3);
+        document.write("<br> concat() -- " + s4) ;
+
+// ---------------------------- split() ----------------------------
+        str = "JavaScript is a Great Language";
+        let splitStr = str.split(" ");
+        document.write("<br> split() -- " + splitStr);
+        document.write("<br> Array.isArray(arrName) -- " + Array.isArray(splitStr));
+
+// ---------------------------- repeat() ---------------------------
+        let repeatStr = str.repeat(5);
+        document.write("<br> repeat() -- <span style='background-color:yellow;'> " + repeatStr + "</span>");
+
+// ---------------------------- slice() ----------------------------
+        let slicedStr = str.slice(3, 18);
+        document.write("<br> slice() -- " + slicedStr);
+
+// ---------------------------- substr() ---------------------------
+        let sub = str.substr(3, 2); // substr(start_ind, how_many)
+        document.write("<br> substr() -- " + sub);
+
+// -------------------------- substring() --------------------------
+        sub = str.substring(3, 5);  // substring(star_ind, end_ind)
+        document.write("<br> substring() -- " + sub);
+
+// --------------------------- toString() --------------------------
+        let num = 50;
+        document.write("<br> toString() -- " + typeof num);
+
+        num = num.toString(); // does not modifies original variable
+        document.write(" " + typeof num);
+
+// --------------------------- valueOf() ---------------------------
+        document.write("<br> valueOf() -- " + str.valueOf(str));
+
+    </script>
+</body>
+</html>

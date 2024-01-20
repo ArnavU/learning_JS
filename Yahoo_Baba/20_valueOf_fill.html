@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>valueOf() fill()</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <p>We dont use valueOf() function generally it is the same as printing array</p>
+
+    <script>
+        let arr = [11, 2, 99, 0];
+        document.write(arr.valueOf());
+
+        document.write("<br>" + arr);
+
+
+        document.write("<br><br> fill() method --> Changes the value of original array");
+        arr.fill("Ram");
+        document.write("<br>" + arr);
+    </script>
+</body>
+</html>

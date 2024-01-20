@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onmouseover and onmouseout Events</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        div {
+            background-color: #D94A38;
+            padding: 40px;
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)">Mouse Over me</div>
+
+    <script>
+        let mOver = (id) => {
+            id.innerHTML = "Thank You!"
+        }
+
+        let mOut = (id) => {
+            id.innerHTML = "Mouse Over meee"
+        }
+    </script>
+</body>
+</html>

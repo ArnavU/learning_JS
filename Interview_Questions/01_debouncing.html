@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing in search</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Debouncing</h1>
+    <p>In JavaScript, debouncing is a technique used to control the rate at which a function is invoked. It is commonly applied to functions that are triggered by user actions, such as scrolling, resizing, or typing. The purpose of debouncing is to ensure that the function is not called so often that it negatively impacts performance or results in unintended behavior.</p>
+    <p>When an event listener is attached to an element, the associated function is typically executed every time the event occurs. However, in situations where the event can fire rapidly, like a user typing quickly in an input field, this can lead to excessive function calls. Debouncing helps address this issue by introducing a delay between the occurrence of the event and the execution of the associated function.</p>
+       
+    
+    <input type="text" onkeyup="betterFunc()" name="item-search" id="search" placeholder="Search">
+
+
+
+    <script>
+
+        let cnt = 0;
+        function getData() {
+            console.log(`API called ...${cnt++}`);
+            console.log(this.value);
+        }
+
+        function debounce(id, delay) {
+            let timer = null;
+            let context = id;
+            return () => {
+                clearTimeout(timer);
+                timer = setTimeout(()=> {
+                    getData.apply(context, arguments);
+                }, delay);
+            }
+
+        }
+
+        let delay = 300;
+        let search = document.getElementById('search')
+        let betterFunc = debounce(search, delay);
+
+    </script>
+</body>
+</html>

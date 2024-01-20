@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node name</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>nodeName tutorial</h1>
+    <h2 id="demo-00">My first page</h2>
+
+    <h2 id="demo"></h2>
+
+    <script>
+        document.getElementById("demo").innerHTML = document.getElementById("demo-00").nodeName + " ";
+
+        document.getElementById("demo").innerHTML += document.getElementById("demo-00").firstChild.nodeName;
+    </script>
+</body>
+</html>

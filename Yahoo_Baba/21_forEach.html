@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach()</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h2>Demonstration of forEach() loop</h2>
+
+    <script>
+        let arr = ["Ram", "Laxman", "Bharat", "Shatrughna"];
+
+        let print = (value, ind) => {
+            document.write("<br>" + ind + " : " + value);
+        }
+
+        arr.forEach(print);
+        
+        // same as above
+        document.write("<br>");
+        arr.forEach((value, ind) => {
+            document.write("<br>" + ind + " : " + value);
+        });
+    </script>
+
+</body>
+</html>

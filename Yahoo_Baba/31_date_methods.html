@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date methods</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+        span {
+            background-color: rgb(194, 213, 19);
+        }
+        ul {
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        const obj = new Date();
+        document.write("<br> <span> obj</span> -- " + obj);
+        
+// -------------------------------  obj.toDateString() ------------------------------- 
+        document.write("<br> <span> obj.toDateString()</span> -- " + obj.toDateString());
+
+// ---------------------------------- obj.getDate() ----------------------------------
+        document.write("<br> <span> obj.getDate()</span> -- " + obj.getDate());
+
+// -------------------------------- obj.getFullYear() --------------------------------
+        document.write("<br> <span> obj.getFullYear()</span> -- " + obj.getFullYear());
+
+// ---------------------------------- obj.getMonth() ---------------------------------
+        document.write("<br> <span> obj.getMonth()</span> -- " + obj.getMonth() + " //0 based indexing");
+
+// ----------------------------------- obj.getDay() ----------------------------------
+        document.write("<br> <span> obj.getDay()</span> -- " + obj.getDay());
+
+// ------------------- get information about previous/future dates -------------------
+        const newObj = new Date("January 2003 30");
+        document.write("<br> " + newObj.getDay());
+        document.write("<br> " + newObj.getFullYear());
+        document.write("<br> " + newObj.getMonth());
+
+// ---------------------------------- obj.getHours() ----------------------------------
+        document.write("<br> <span> obj.getHours()</span> -- " + obj.getHours());
+    
+// --------------------------------- obj.getMinutes() ---------------------------------
+        document.write("<br> <span> obj.getMinutes()</span> -- " + obj.getMinutes());
+    
+// --------------------------------- obj.getSeconds() ---------------------------------
+        document.write("<br> <span> obj.getSeconds()</span> -- " + obj.getSeconds());
+    
+// ------------------------------- obj.getMilliseconds() -------------------------------
+        document.write("<br> <span> obj.getMilliseconds()</span> -- " + obj.getMilliseconds());
+
+        document.write(`<br><br> Other date methods are -- 
+        <ul> 
+            <li>setFullYear()</li>
+            <li>setMonth()</li>
+            <li>setDate()</li>
+            <li>setHours()</li>
+            <li>setMinutes()</li>
+            <li>setSeconds()</li>
+            <li>setMilliseconds()</li>
+        </ul>
+        `)
+
+// ------------------------- printing current date/month/year -------------------------
+        let date = obj.getDate();
+        let month = obj.getMonth();
+        let year = obj.getUTCFullYear();
+        document.write(`<span> Today is</span> -- ${date}/${month+1}/${year}`)
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+        }
+        #btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #ffffff;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #profile, #followers {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="profile"></div>
+        <div id="followers"></div>
+        
+        <button id="btn">Click Me</button>
+    </div>
+
+
+
+    <script>
+        const requestUrl = 'http://api.github.com/users/hiteshchoudhary';
+        const xhr = new XMLHttpRequest();
+        let data;
+
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+                console.log(JSON.parse(xhr.responseText).followers);
+                data = JSON.parse(xhr.responseText);
+
+                
+                let profile = document.getElementById('profile');
+                let followers = document.getElementById('followers');
+                let img = document.createElement('img');
+                img.src = data.avatar_url;
+                profile.appendChild(img);
+                followers.innerHTML = data.followers;
+            }
+        }
+        
+        xhr.open('GET', requestUrl);
+        xhr.send();
+        
+
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', showImg);
+
+        let flag = 0;
+        let profile = document.getElementById('profile');
+        let followers = document.getElementById('followers');
+        profile.style.display = "0";
+        followers.style.display = "0";
+        
+        function showImg() {
+            
+            if(flag == 0) {
+                flag = 1;
+                profile.style.opacity = "1";
+                followers.style.opacity = "1";
+            }
+            else {
+                flag = 0; 
+                profile.style.opacity = "0";
+                followers.style.opacity = "0";
+            }
+            
+        }
+        
+        
+        </script>
+</body>
+</html>

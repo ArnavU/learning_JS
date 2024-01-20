@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling, Event Capturing</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+        #myDiv1, #myDiv2 {
+            background-color: coral;
+            padding: 40px;
+        }
+        #myP1, #myP2 {
+            background-color: white;
+            font-size: 20px;
+            padding: 20px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript addEventListener()</h2>
+
+    <div id="myDiv1">
+        <h2>Bubbling:</h2>
+        <p id="myP1">Click Me!</p>
+    </div> <br>
+
+    <div id="myDiv2">
+        <h2>Capturing:</h2>
+        <p id="myP2">Click Me!</p>
+    </div>
+    
+    <script>
+        // Bubbling                                       (event, function, useCapture)
+        document.getElementById("myDiv1").addEventListener('click', orange, false);
+        document.getElementById("myP1").addEventListener('click', white, false);
+
+        // capturing                                      
+        document.getElementById("myDiv2").addEventListener('click', orange, true);
+        document.getElementById("myP2").addEventListener('click', white, true);
+
+        function white() {
+            alert("You clicked the white element!");
+        }
+
+        function orange() {
+            alert("You clicked the orange element");
+        }
+
+        // useCapture --> default false
+    </script>
+
+</body>
+</html>

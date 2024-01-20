@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h4>
+        Throttling in JavaScript is a technique used to control the rate at which a function is executed. It ensures that a function is not called more often than a specified delay between each invocation, regardless of how frequently the function is triggered.</h4>
+    <input type="text" onkeyup=betterExpensive() id="search">
+    <label for="search">Search</label>
+
+
+    <script>
+        const search = document.getElementById('search');
+        
+        const betterExpensive = throttle();
+
+        function expensiveFunc() {
+            console.log(this.value);
+        }
+        
+        function throttle() {
+            let flag = true;
+            let count = 0;
+
+            return function(){
+                if(flag) {
+                    flag = false;
+                    console.log("Function called", count++);
+                    expensiveFunc.apply(search, arguments)
+
+                    setTimeout(()=> {
+                        flag = true;
+                    }, 1000)
+                }
+            }
+
+        }
+
+    </script>
+</body>
+</html>

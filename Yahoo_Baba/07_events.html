@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        p {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body onkeypress="giveAlert()" onresize="giveAlert()" onscroll="giveAlert()">
+
+    <button onclick="hello()">Click Me</button>
+    <p ondblclick="giveAlert()">On double click</p>
+    <p oncontextmenu="giveAlert()">On context menue</p>
+    <p onmouseenter="giveAlert()">On mouse enter</p>
+    <p onmouseout="giveAlert()">On mouse out</p>
+    <p onmousedown="giveAlert()">On mouse down</p>
+    <p onmouseup="giveAlert()">On mouse up</p>
+    <p onkeypress="giveAlert()">On key press -> does not works here. Works only on body or form</p>
+    
+    <script>
+        let hello = () => {
+            document.write("Hello how are you.");
+        }
+
+        let giveAlert = () => {
+            alert("Hello.");
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        let obj = {
+            fname: "Arnav",
+            lname: "Umarkar",
+            age: 20,
+            gender: "Male",
+            favMovies: ['Dhoom', 'Sholay', 'Hum'],
+
+            // arrow function does not work in obj
+            // since it does not have this binding
+
+            // fullName: () => {
+            //     return (this.fname + " " + this.lname);
+            // }
+
+            fullName: function() {
+                return (this.fname + " " + this.lname);
+            },
+            address : {
+                country: 'India',
+                city: 'Wardha',
+                email: 'abc@gmail.com'
+            }
+        };
+
+        document.write(obj);
+        console.log(obj);
+        document.write("<br>" + obj.gender);
+        document.write("<br>" + obj.favMovies[1]);
+        document.write("<br>" + obj.fullName());
+        document.write("<br>" + obj.address.city);
+
+        
+
+    </script>
+</body>
+
+</html>

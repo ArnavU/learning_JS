@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Navigation</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="title">I am Learning JavaScript</h1>
+        <div id="content">
+            <span>JavaScript is a popular language in both frontend and backend</span>
+        </div>
+        <br>
+        <div id="last">This the last child</div>
+    </div>
+
+    <script>
+        let containerObj = document.getElementById('container');
+        console.log(containerObj.firstChild.nodeName); // --> #text
+        console.log(containerObj.firstElementChild.nodeName); // --> H1
+
+        // ------------------------------ Accessing last child -------------------------------
+        console.log(containerObj.lastChild); // will give the text node
+        console.log(containerObj.lastElementChild); // will give the last element node
+
+        // ----------------------------- Accessing child nodes -----------------------------
+        console.log(containerObj.childNodes); // returns nodeList object 
+        // can access objects by indexing
+
+        let cNodes = container.childNodes;
+        for(let cNode of cNodes) {
+            console.log(cNode.nodeName);
+        }
+
+        // ------------------------------- Accessing parent --------------------------------
+        let pNode = containerObj.parentNode;
+        console.log("Accessing parent Node: " + pNode.nodeName); // o/p --> BODY
+
+        // ------------------------------ Accessing siblings ------------------------------
+        let title = document.getElementById('title');
+        console.log("title->nextSibling->nodeName: " + title.nextSibling.nodeName);
+        console.log("title->nextElementSibling->nodeName: " + title.nextElementSibling.nodeName);
+    </script>
+</body>
+</html>

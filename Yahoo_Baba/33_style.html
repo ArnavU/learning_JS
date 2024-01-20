@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling DOM</title>
+    <style>
+        body {
+            background-color: gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .underline {
+            text-decoration: underline wavy;
+        }
+
+        .bgBlue {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Heading</h1>
+
+    <script>
+        let heading = document.querySelector(".heading");
+        heading.className = "green underline";
+
+        console.log(heading.className);
+
+        console.log(heading.classList)
+        heading.classList.add('bgBlue', 'xyz');
+        console.log(heading.classList)
+        
+        heading.classList.remove('xyz');
+        console.log(heading.classList)
+        
+    </script>
+</body>
+</html>

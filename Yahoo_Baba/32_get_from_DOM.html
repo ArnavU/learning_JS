@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>What we can Get with DOM ?: </h2>
+    <ul>
+        <li>HTML</li>
+        <li>Text</li>
+        <li>Attribute</li>
+    </ul>
+
+    <h2>Dom Get Methods</h2>
+    <ul>
+        <li>innerText</li>
+        <li>innerHTML</li>
+        <li>getAttribute</li>
+        <li>getAttributeNode</li>
+        <li>attributes</li>
+    </ul>
+
+    <h3 class="content" id="title" onclick="xyz()" style="color:green"><b>Content:</b></h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolorem quidem dolores et enim rem sint soluta illum temporibus quo est expedita cumque necessitatibus amet officiis, modi quam vitae, tenetur culpa laboriosam!</p>
+
+    <h3>Practice</h3>
+    <p class="demo1"></p>
+    <p class="demo2"></p>
+    <p class="demo3"></p>
+    <p class="demo4"></p>
+    <p class="demo5"></p>
+
+    <h2>Setting and Removing Attributes</h2>
+    <ul>
+        <li>setAttribute</li>
+        <li>attributes</li>
+        <li>removeAttribute</li>
+    </ul>
+
+    <div class="try">My attributes will change</div>
+    <button onclick="add()">Add</button>
+    <div class="tryRemove" onclick="remove()">My attribute will be removed</div>
+    <button onclick="remove()">Remove</button>
+
+    <script>
+        let demo1 = document.querySelector('.demo1');
+        let demo2 = document.querySelector('.demo2');
+        let demo3 = document.querySelector('.demo3');
+        let demo4 = document.querySelector('.demo4');
+        let demo5 = document.querySelector('.demo5');
+        let content = document.getElementById('title');
+        let innerText = content.innerText;
+        demo1.innerText = innerText;
+
+        demo2.innerText = content.innerHTML;
+
+        demo3.innerText = content.getAttribute('class');
+        demo3.innerText += " " + content.getAttribute('id')
+        demo3.innerText += " " + content.getAttribute('style')
+        demo3.innerText += " " + content.getAttribute('onclick');
+
+        demo4.innerText = content.getAttributeNode('class');
+        console.log(content.getAttributeNode('class'));
+
+        demo5.innerText = content.attributes[1];
+        console.log(content.attributes[1]);
+
+
+        // Adding and removing attributes
+        let tryToAdd = document.body.getElementsByClassName('try')[0];
+        let tryToRemove = document.getElementsByClassName('tryRemove')[0];
+        tryToRemove.setAttribute('style', "font-size: 24px");
+        
+        function add() {
+            tryToAdd.setAttribute('style', 'color: green');
+        }
+
+        function remove() {
+            tryToRemove.removeAttribute('style')
+        }
+        
+    </script>
+</body>
+</html>

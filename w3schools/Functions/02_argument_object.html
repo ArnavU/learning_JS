@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argument object</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+        #myDiv {
+            width: 400px;
+            border: 2px solid black;
+            font-size: 30px;
+            background-color: rgb(79, 201, 79);
+        }
+    </style>
+</head>
+<body>
+    <h1>Arguments Object</h1>
+    <h2>Sum of all arguments</h2>
+    <p id="demo"></p>
+
+    <h3>If a function is called with too many arguments (more than declared), these arguments can be reached using the arguments object.</h3>
+
+    <div id="myDiv">
+        Arguments are passed by value. <br>
+        Objects are passed by reference.
+    </div>
+
+    <script>
+        let sum = sumOfArgs(4, 9, 16, 25, 29, 100, 66, 77);
+
+        function sumOfArgs() {
+            let sum = 0;
+            // for(let i=0; i<arguments.length; i++) { // => works
+            //     sum += arguments[i];
+            // }
+
+            // arguments.forEach((arg) => { // => does not work
+            //     sum+=arg;
+            // })
+
+            for(let arg of arguments) {
+                sum += arg;
+            }
+
+            return sum;
+        }
+
+        document.getElementById('demo').innerHTML = "Sum = " + sum;
+    </script>
+
+</body>
+</html>

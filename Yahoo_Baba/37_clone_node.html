@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cloneNode</title>
+</head>
+<body>
+    <h2>Aim: To clone Orange from list1 and append it to list2</h2>
+    <ul id="list1">
+        <li>Apple</li>
+        <li class="myClass">Orange</li>
+        <li>Banana</li>
+        <li>Pineapple</li>
+    </ul>
+
+    <ul id="list2">
+        <li>Carrot</li>
+        <li>Raddish</li>
+    </ul>
+
+    <button id="clone">Clone</button>
+
+    <p>If Orange is directly appended the it will get removed from list1</p>
+
+
+    <script>
+        let button = document.getElementById("clone");
+        button.addEventListener('click', clone);
+        let orange = document.getElementById('list1').children[1];
+
+        function clone() {
+            let list2 = document.getElementById('list2');
+
+            let clone = orange.cloneNode(true);
+            list2.appendChild(clone);
+
+        }
+
+        let clone1 = orange.cloneNode(true); // also clones children
+        let clone2 = orange.cloneNode(); // clones only element
+        console.log(clone1);
+        console.log(clone2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+</body>
+
+<script>
+    function loadscript(src, callback) { // here the function "callback" is not called so no need of argument
+        let script = document.createElement("script");
+        script.src = src;
+        script.onload = function(){
+            console.log(`Script loaded with SRC: ${src}`);
+            callback(src); // wherever the function is called it must be called with an argument
+        }
+
+        script.onerror = function() {
+            console.log("There was an error loading script: " + src);
+        }
+        document.body.appendChild(script);
+    }
+
+    function callback(src) {
+        console.log("This is a callback. SRC: " + src);
+    }
+
+    // loadscript("https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js", callback);
+    loadscript("https://cdn.jsdeli43vr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js", callback);
+    // here the function is passed so no need of arguemnt
+</script>
+
+</html>

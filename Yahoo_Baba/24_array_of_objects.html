@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Objects</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        let arr = [
+            {name: 'Arnav', age: 20},
+            {name: 'Ram', age: 19},
+            {name: 'Laxman', age: 18}
+        ]
+
+        document.write(arr);
+        document.write("<br>" + arr[1].name)
+        
+        for(let obj of arr) {
+            document.write("<br>" + obj.name + ": " + obj.age);
+        }
+
+    </script>
+</body>
+</html>

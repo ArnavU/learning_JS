@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contains</title>
+    <style>
+        .container {
+            background-color: rgb(222, 222, 73);
+        }
+        #abc {
+            border: 2px solid black
+        }
+
+        .xyz {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum atque consequuntur reiciendis at exercitationem praesentium alias facere cum, non accusamus id inventore culpa itaque error dolorem. Praesentium mollitia obcaecati voluptatibus tempore ipsa?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At dolores temporibus rerum nobis fuga, nulla voluptatem numquam vel minima, atque quos sequi.</p>
+        <div id="abc">
+            abc
+            <p id="xyz">xyz <br> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro reiciendis eligendi accusantium necessitatibus possimus tempore deleniti quisquam quasi quaerat! Fugiat a deleniti temporibus! Pariatur maxime doloribus dolor fugit placeat laboriosam iusto voluptates?</p>
+        </div>
+    </div>
+
+    <div id="demo"></div>
+
+    <script>
+        let parent = document.querySelector('.container');
+        let xyz = document.getElementById('xyz');
+        let result = parent.contains(xyz);
+
+        let demo = document.getElementById('demo');
+        demo.innerText = result;
+    </script>
+</body>
+</html>

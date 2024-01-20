@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>focus and blur events</title>
+    <style>
+        img {
+            height: 300px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <img src="../Basic form events.png" alt=""> <br><br>
+
+    <label for="">Name: </label> <input type="text" onfocus="focusFun(this)" onblur="blurFun(this)" oninput="inputFun(this)"> <br><br>
+    <label for="">Age: </label> <input type="text" onfocus="focusFun(this)" onblur="blurFun(this)"> <br><br>
+
+    <label for="">Country</label>
+    <select name="" id="" onfocus="focusFun(this)" onblur="blurFun(this)">
+        <option value="">India</option>
+        <option value="">USA</option>
+        <option value="">Japan</option>
+        <option value="">China</option>
+    </select>
+
+    <div class="demo"></div>
+
+    <script>
+        function focusFun(id) {
+            id.style.backgroundColor = 'green';
+        }
+
+        function blurFun(id) {
+            id.style.backgroundColor = '';
+        }
+
+        let demo = document.querySelector('.demo');
+        const inputFun = (id) => {
+            let val = id.value;
+            demo.innerHTML = val;
+        }
+    </script>
+</body>
+</html>

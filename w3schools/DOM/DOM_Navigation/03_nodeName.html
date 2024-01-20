@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node value</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Node name</h1>
+    <div id="myDiv">
+        <p>This is a paragraph</p>
+    </div>
+    <p id="demo"></p>
+
+    <script>
+        const demo = document.getElementById("demo");
+        const myDiv = document.getElementById("myDiv");
+        demo.innerHTML = myDiv.firstElementChild.firstChild.nodeValue;
+
+        console.log(myDiv.nodeValue); // --> null
+    </script>
+</body>
+</html>

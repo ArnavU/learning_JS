@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onchange Event</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h2>onchange Event</h2>
+
+    <div>
+        Enter your name: <input type="text" id="fname" onchange="upperCase()">
+    </div>
+
+    <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+    <script>
+        // there is another similar event => oninput
+        function upperCase() {
+            let ele = document.getElementById("fname");
+            ele.value  = ele.value.toUpperCase();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objectj</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let person = new Object();
+        person.fname = "Arnav";
+        person.lname = "Umarkar";
+        person.age = 20;
+
+        document.write(person);
+        document.write("<br>" + person.fname);
+        document.write(" " + person['lname']);
+
+        for(let ele in person) {
+            document.write("<br>" + person[ele]); // person.ele --> X
+        }
+
+
+        
+    </script>
+</body>
+</html>

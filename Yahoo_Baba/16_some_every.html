@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>some() every()</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let ages = [10, 15, 19, 2];
+        
+        let checkValidAge = (age) => {
+            return age>=18;
+        }
+        
+        let result = ages.some(checkValidAge);
+        document.write(result);
+
+        let costs = [100, 150, 200, 90];
+
+        let checkValidCost = (cost) => {
+            return cost>=100;
+        }
+
+        result = costs.every(checkValidCost);
+        document.write("<br>" + result);
+
+
+    </script>
+</body>
+</html>

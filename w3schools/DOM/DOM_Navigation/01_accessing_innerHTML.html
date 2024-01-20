@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing innerHTML</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="demo-00">My first page</h1>
+
+    <h2>All the (3) following examples retrieves the text of an &lt;h1&gt; element and copies it into a &lt;p&gt; element:</h2>
+
+    <p id="demo-01"></p>
+    <p id="demo-02"></p>
+    <p id="demo-03"></p>
+
+    <script>
+        document.getElementById("demo-01").innerHTML = document.getElementById("demo-00").innerHTML;
+
+        document.getElementById("demo-02").innerHTML = document.getElementById("demo-00").firstChild.nodeValue;
+
+        document.getElementById("demo-03").innerHTML = document.getElementById("demo-00").childNodes[0].nodeValue;
+
+    </script>
+    
+</body>
+</html>

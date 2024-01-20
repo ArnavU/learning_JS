@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>repalceChild and removeChild</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Orange</li>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Pineapple</li>
+        <li>This will be removed</li>
+    </ul>
+
+    <button onclick="replace()">Replace</button>
+    <button onclick="remove()">Remove</button>
+    <pre>
+        parent.replaceChild(newChild, oldChild);
+        parent.removeChild(child)
+    </pre>
+
+    <script>
+        let parent = document.getElementById('list');
+
+        // replacing child
+        function replace() {
+            let newChild = document.createElement('li');
+            let text = document.createTextNode("WOW new Text node");
+            newChild.append(text);
+    
+            let oldChild = parent.children[1];
+            parent.replaceChild(newChild, oldChild);
+        }
+
+        // removing child
+        function remove() {
+            let child = parent.children[4];
+            // parent.removeChild(child)
+            child.remove(); // same as above
+        }
+    </script>
+</body>
+</html>

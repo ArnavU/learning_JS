@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number methods</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+
+// -------------------------- Number() --------------------------
+        let str = "22";
+        // str = true; --> Number(true) --> o/p => 1
+        let num = Number(str); 
+        // same as 
+        // num = Number.parseInt("22");
+
+        // does not works on "number+string";
+
+        document.write("Number() -- " + typeof str);
+        document.write(" ")
+        document.write(typeof num);
+        document.write(" " + num);
+
+// ------------------------- parseInt() -------------------------
+        str = "50.22";
+        // str = "50 years"; --> o/p => 50
+        // str = "he is 50"; --> o/p => NaN (not a number)
+        num = parseInt(str);
+        document.write("<br> parseInt() -- " + num);
+
+// ------------------------ parseFloat() ------------------------
+        let floatStr = "29.2324";
+        // floatStr = "59.23 is my age"; --> o/p => 59.23
+        // floatStr = "My age is 23.3"; --> o/p => NaN
+        let floatNum = parseFloat(floatStr);
+        document.write("<br> parseFloat() -- " + floatNum);
+    
+// ------------------------- isFinite() -------------------------
+        let value = "100"; // Number.isFinite("100") --> o/p => false
+        // value = null; --> o/p => true
+        // value = Infinity; --> o/p => false
+        // value = true; --> o/p => true
+        // value = "true" --> o/p => o/p => false   "true" is considered string
+        let result = isFinite(value);
+        document.write("<br> isFinite() -- " + result);
+        document.write("<br> Number.isFinite() -- " + Number.isFinite("100"));
+
+        document.write("<br><br><span style='background: yellow;'>isFinite() returns true if a value is a finite number. <br>Number.isFinite() returns true if a number is a finite number. </span><br>")
+
+// --------------------- Number.isInteger() ---------------------
+        value = "100";
+        result = Number.isInteger(value);
+        // result = Number.isInteger(10.5) --> o/p => false
+        document.write("<br> Number.isInteger() -- " + result);
+
+        // document.write("<br>" + isInteger(value)); // does not works
+
+// -------------------------- toFixed() --------------------------
+        floatNum = 50.9454;
+        num = floatNum.toFixed(3); // does round up if next value is above or equal to 5 
+        document.write("<br> toFixed() -- " + num);
+
+// ------------------------ toPrecision() ------------------------
+        floatNum = 60.9254;
+        num = floatNum.toPrecision(4); // 4 == total digits that should come in num
+        document.write("<br> toPrecision() -- " + num);
+
+
+
+
+    </script>
+</body>
+</html>

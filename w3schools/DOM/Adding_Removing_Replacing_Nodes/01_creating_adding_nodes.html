@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating and adding nodes</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>JavaScript HTML DOM</h2>
+    <h3>Add a new HTML Element.</h3>
+
+    <div id="myDiv">
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph</p>
+    </div>
+
+    <script>
+        const para = document.createElement("p");
+        const node = document.createTextNode("This is new.");
+        para.appendChild(node);
+
+        const element = document.getElementById("myDiv");
+        element.appendChild(para);
+    </script>
+
+</body>
+
+</html>

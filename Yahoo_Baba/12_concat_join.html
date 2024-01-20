@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concat and Join Methods</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let arr = ["Arnav", "Ram", "Vikram", "Aditya"];
+        let arr2 = ["Vijay", "Laxman"];
+
+        let arr3 = arr.concat("Bharat", "Shatrughna"); // does not modify original array
+        document.write(arr3);
+        document.write("<br>" + arr);
+
+        for(let ele of arr3) {
+            document.write("<br>" + ele);
+        }
+
+        let arr4 =arr.concat(arr2);
+        document.write("<br>" + arr4);
+
+        let str = arr.join(" - ");
+        document.write("<br>" + str);
+    </script>
+</body>
+</html>

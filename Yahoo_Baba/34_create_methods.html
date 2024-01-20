@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Create Methods</title>
+    <style>
+        body {
+            overflow-X: hidden;
+        }
+        .main_content {
+            display: flex;
+            width: 100vw;
+        }
+
+        .content {
+            margin: 20px;
+        }
+
+        img {
+            height: 200px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_content">
+        <div class="content">
+            <h2>DOM Create Methods</h2>
+            <img src="../DOM Create Methods.png" alt="">
+        </div>
+    
+        <div class="content">
+            <h2>DOM Append Methods</h2>
+            <img src="../DOM Append Methods.png" alt="">
+        </div>
+    </div>
+
+    <div class="practice">
+        <p>Press this button to create a new element and append it to body</p>
+        <button onclick="append()">appendChild()</button>
+
+        <p>Press this button to insert before the first elementChild in practice</p>
+        <button onclick="insert()">insertBefore()</button>
+    </div>
+    
+    <script>
+
+        let comment = document.createComment("this is a comment");
+        console.log(comment);
+
+        function append() {
+            let element = document.createElement('h2');
+
+            let newText = document.createTextNode("This is just a text.");
+
+            element.appendChild(newText);
+
+            document.body.appendChild(element);
+        }
+
+        function insert() {
+            let element = document.createElement('h2');
+            let newText = document.createTextNode("This is insert before");
+            element.appendChild(newText);
+
+            let parent = document.getElementsByClassName('practice')[0];
+            parent.insertBefore(element, parent.children[0]);
+        }
+    </script>
+
+</body>
+</html>

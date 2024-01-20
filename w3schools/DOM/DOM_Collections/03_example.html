@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping through HTMLCollection Object</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>JavaScript HTML DOM</h2>
+
+    <p>Hello World!</p>
+    <p>Hello Norway!</p>
+    <p>Click the button to change the color of all p elements.</p>
+
+    <button onclick="myFunc(this)">Change Color of all Paragraphs</button>
+    <button onclick="addPara()">Add a Para</button>
+
+    <script>
+
+        function addPara() {
+            let newPara = document.createElement('p');
+            let text = document.createTextNode("This is new Para");
+            newPara.append(text);
+            document.body.appendChild(newPara)
+        }
+
+        var flag = true;
+
+        const myCollection = document.getElementsByTagName('p');
+        function myFunc(id) {
+
+            for (let i = 0; i < myCollection.length; i++) {
+                if (flag == true) {
+                    myCollection[i].style.color = 'red';
+                }
+                else {
+                    myCollection[i].style.color = 'black';
+                }
+            }
+            flag = !flag;
+        }
+    </script>
+</body>
+
+</html>

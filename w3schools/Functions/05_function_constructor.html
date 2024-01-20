@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Constructor</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Invoking a Function with a Function Constructor</h2>
+    <p>In this example, myFunction is a function constructor:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction(arg1, arg2) {
+            this.fname = arg1;
+            this.lname = arg2;
+        }
+        const myObj = new myFunction("Arnav", "Umarkar");
+
+        document.getElementById("demo").innerHTML = myObj.fname;
+
+    </script>
+</body>
+
+</html>

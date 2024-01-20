@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter()</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+
+        let ages = [10, 18, 15, 19, 19, 25];
+        
+        let checkAdultAge = (age) => {
+            return age>=18;
+        }
+        
+        let adultAges = ages.filter(checkAdultAge);
+        
+        document.write(adultAges);
+    </script>
+
+</body>
+</html>

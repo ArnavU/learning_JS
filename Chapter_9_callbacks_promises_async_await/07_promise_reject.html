@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(61, 55, 55);
+        }
+    </style>
+</head>
+<body>
+    
+
+    <script>
+        let p = new Promise((resolve, reject) => {
+            console.log("I am a Promise and I am pending.");
+            setTimeout(()=> {
+                console.log("I am rejected.");
+                // resolve("I am resolved successfully");
+                reject(new Error("I am an error"));
+            }, 2000);
+        })
+
+        console.log(p);
+
+        p.catch(function(err) {
+            console.log(err);
+            console.log(p); // state - rejected
+        })
+    </script>
+</body>
+</html>

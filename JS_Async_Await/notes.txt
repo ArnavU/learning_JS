@@ -1,0 +1,30 @@
+Synchronous - Until one task is not completed don't do other task (one after other)
+Asynchronuos - Do all tasks together - the task that completes first give its answer - no order 
+
+task a - 5
+task b - 2
+task c - 15
+task d - 1
+
+in synchronous total time - 5+2+15+1
+in asynchronous total time - 15
+
+Asynchronous tasks - DB calls, cryptography, network request, file request, complex calculations
+
+How do we know whether we are writing asynchronous code
+setTimeout
+setInterval
+promises
+fetch
+axios
+XMLHttpRequest
+ |
+ v
+get the results with the help of
+then catch
+async await - try and catch
+
+
+the synchronous code is sent to the call stack and the asynchronous code is sent to the side stack
+the side stack gets emptied one by one after their execution
+the side stack functions only enter the main stack after they completes their execution and if the main stack is empty

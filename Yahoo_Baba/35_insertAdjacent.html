@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertAdjacent</title>
+    <style>
+        .img {
+            display: flex;
+        }
+        img {
+            height: 300px;
+        }
+        #container {
+            background-color: rgb(224, 224, 89);
+            height: 300px;
+        }
+
+        #highlight {
+            background-color: rgb(172, 94, 107);
+        }
+    </style>
+</head>
+<body>
+    <h2>insertAdjacentElement()</h2>
+    <h2>insertAdjacentHTML()</h2>
+    <h2>insertAdjacentText()</h2>
+    <div class="img">
+        <img src="../DOM Create and Insert Methods.png" alt="">
+        <img src="../DOM insertAdjacent Positions.png" alt="">
+    </div>
+
+
+    <div id="container">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A ullam omnis eos autem culpa incidunt voluptate quia quidem, blanditiis repellendus quam quod cupiditate quos vitae tempora error hic reiciendis libero commodi tempore.</p>
+        <h3><span id="highlight">beforebegin, afterbegin, beforeend, afterend</span> cannot work together</h3>
+    </div>
+
+    <script>
+        let element = document.createElement('h2');
+        let text = document.createTextNode("insertAdjacentElement('beforeend', element);");
+        element.append(text);
+        let target = document.getElementById('container');
+        // target.insertAdjacentElement("beforebegin", element);
+        // target.insertAdjacentElement('afterBegin', element);
+        target.insertAdjacentElement('beforeend', element);
+        // target.insertAdjacentElement('afterend', element);
+
+        let html = "<h2>insertAdjacentHTM('afterbegin', html);</H2>";
+        target.insertAdjacentHTML('afterbegin', html);
+        
+        let newText = "insertAdjacentText('beforebegin', newText);";
+        target.insertAdjacentText('beforebegin', newText);
+        
+
+
+    </script>
+
+</body>
+</html>

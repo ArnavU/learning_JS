@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onmousedown and onmouseup Events</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        div {
+            background-color: #D94A38;
+            width: 120px;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)">Click Me!</div>
+
+    <script>
+        function mDown(id) {
+            id.innerHTML = "Relese me";
+            id.style.backgroundColor = "#1ec5e5";
+        }
+
+        function mUp(id) {
+            id.innerHTML = "Thank You!";
+            id.style.backgroundColor = "#D94A38"
+        }
+    </script>
+</body>
+</html>

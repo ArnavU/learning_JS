@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert "Hello world!"</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript addEventListener()</h2>
+    <p>Alert "Hello world!" when the user clicks on the button</p>
+    <button id="myBtn">Try it</button>
+
+    <script>
+        // document.getElementById("myBtn").addEventListener('click', ()=>{
+        //     alert("Hello world!");
+        // })
+
+        // ------------------ Using External function ------------------
+        document.getElementById('myBtn').addEventListener('mousedown', myFunc);
+        function myFunc() {
+            alert("Hello world!");
+        }
+    </script>
+
+</body>
+</html>

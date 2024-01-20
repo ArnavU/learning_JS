@@ -1,0 +1,16 @@
+Sequence
+1) Events
+2) Event_Listeners
+3) DOM_Navigation
+4) Adding_Removing_Replacing_Nodes
+5) DOM_Collections
+
+difference between textContent and innerText
+--> textContent:
+1) textContent returns all the text content within an element, including any text within nested elements and any text inside HTML comments or scripts.
+2) It is not aware of the styling or rendering of the text, so it returns the text content as it appears in the HTML source.
+3) It is generally considered more reliable for text manipulation, especially when you want to extract or manipulate all the text content within an element.
+
+--> innerText:
+1) innerText returns the visible text content of an element, considering CSS styles, and it takes into account the current rendering on the page. It does not return the text inside hidden elements or elements with display: none.
+2) Because it depends on the rendering of the page, it may be less reliable in some cases, especially when you need to extract all text content, including hidden elements or those with CSS properties that might affect visibility.

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The event Object</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: gray;
+        }
+        p {
+            margin: 10px;
+            font-size: 22px;
+        }
+        pre {
+            font-size: 17px;
+        }
+        ul {
+            background-color: rgb(72, 62, 62);
+            padding: 20px;
+            cursor: pointer;
+        }
+        ul li {
+           list-style: none;
+            background-color: yellow;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p><b>The event Parameter: </b><br>
+        The event parameter is an object that contains information about the event that occurred. It provides properties and methods that allow you to access details such as:</p>
+
+    <pre>
+        event.type: The type of the event ('click', 'keydown', etc.).
+        event.target: The element that triggered the event.
+        event.currentTarget: The current element that has the event listener.
+        event.preventDefault(): A method to prevent the default behavior of the event (e.g., prevent a form submission).
+        event.stopPropagation(): A method to stop the event from propagating up or down the DOM tree.</pre>
+    <br>
+    <ul>
+        <li><a href="https://www.google.com">Home</a></li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Settings</li>
+    </ul>
+
+    <script>
+        let ul = document.getElementsByTagName('ul')[0];
+        ul.addEventListener('click', (e) => {
+            console.log("ul clicked");
+            console.log(e);
+            console.log("e.target => ", e.target);
+            console.log("e.currentTarget => ", e.currentTarget);
+            console.log("e.type => ", e.type);
+            console.log("e.clientX => ", e.clientX);
+            console.log("e.clientY => ", e.clientY);
+            // e.preventDefault(); // stops form redirectiong to google.com
+            // e.stopPropagation()
+            console.log();
+        }, false)
+        
+        let lis = document.getElementsByTagName('li');
+        Array.from(lis).forEach((li) => {
+            li.addEventListener('click', (e) => {
+                console.log("li clicked");
+                console.log(e);
+                console.log("e.target => ", e.target);
+                console.log("e.currentTarget => ", e.currentTarget);
+                console.log("e.type => ", e.type);
+                console.log("e.clientX => ", e.clientX);
+                console.log("e.clientY => ", e.clientY);
+                e.preventDefault(); // stops form redirectiong to google.com
+                // e.stopPropagation(); 
+                console.log();
+            })
+        }, false)
+    </script>
+</body>
+</html>

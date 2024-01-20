@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map method</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        const arr = [1, 3, 5, 8, 10];
+        let newArr = arr.map((x)=>{
+            return x*10;
+        });
+        document.write(newArr);
+
+        const arrOfObj = [
+            {name: 'Ram', lname: 'abc'},
+            {name: 'Arnav', lname: "Umarkar"},
+            {name: 'Laxman', lname: "abc"}
+        ];
+
+        let arrName = arrOfObj.map((obj)=> {
+            return (obj.name + ' ' + obj.lname);
+        })
+        for(let i=0; i<arrName.length; i++) {
+            document.write("<br>" + arrName[i]);
+        }
+    </script>
+</body>
+</html>

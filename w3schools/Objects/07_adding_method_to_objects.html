@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Methods to Object</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adding a Method to an Object</h1>
+
+    <p id="demo"></p>
+    <p id="func"></p>
+
+    <p><b>fullName()</b> &rarr; Method of the person object.</p>
+    <p><b>fullName</b> &rarr; Property of the person object</p>
+    <p>The fullName property will execute (as a function) when it is invoked with "()".</p>
+    <script>
+        const person = {
+            fname: "Arnav",
+            lname: "Umarkar",
+            id: 5527
+        }
+        
+        person.fullName = function() {
+            return this.fname + " " + this.lname;
+        }
+
+        document.getElementById("demo").innerHTML = "My name is: " + person.fullName();
+        document.getElementById("func").innerHTML = "function definition: " + person.fullName;
+    </script>
+</body>
+</html>

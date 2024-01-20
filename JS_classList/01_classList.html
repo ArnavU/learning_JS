@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding classList method</title>
+</head>
+<style>
+    body{
+        background-color: gray;
+    }
+
+    span {
+        background-color: pink;
+        font-size: 18px;
+    }
+
+    .green {
+        color: green;
+    }
+
+    .underline {
+        text-decoration: underline wavy black;
+    }
+
+    .result{
+        display: inline-block;
+        height: 18px; 
+        min-width: 35px;
+        background-color: white;
+        position: relative;
+        top: 3.5px;
+    }
+</style>
+<body>
+    <h1 id="title">Exploring classList</h1>
+    <div class="content">
+        <p>classList is a property of an object.</p>
+        <p>This are the methods of classList: </p>
+        <img src="classList_methods.png" height="350px" alt="">
+    </div>
+
+    <div class="main">
+        <span>title.classList.add('green')</span>
+        <button onclick="addGreen()">addGreen</button> <br><br>
+
+        <span>title.classList.add('underline')</span>
+        <button onclick="addUnderline()">addUnderline</button> <br><br>
+
+        <span>title.classList.remove('green')</span>
+        <button onclick="removeGreen()">removeGreen</button> <br><br>
+
+        <span>title.classList.contains('green')</span>
+        <button onclick="containsGreen()">containsGreen</button> 
+        <div class="result"></div><br><br>
+
+
+        <span>title.classList.toggle('green')</span>
+        <button onclick="toggle()">toggle</button><br><br>
+
+        <div class="length">Length = </div>
+    </div>
+
+    <script>
+        let title = document.getElementById('title');
+
+        function addGreen() {
+            title.classList.add('green');
+        }
+
+        function addUnderline() {
+            title.classList.add('underline');
+        }
+        
+        function removeGreen() {
+            title.classList.remove('green');
+        }
+
+        function containsGreen() {
+            let contains = title.classList.contains('green');
+            document.getElementsByClassName('result')[0].innerText = contains;
+        }
+
+        function toggle() {
+            title.classList.toggle('green');
+        }
+
+        let length = document.querySelector('.length');
+        length.style.cursor = "pointer";
+        length.addEventListener('click', function() {
+            length.innerText += " " + title.classList.length;
+        })
+
+
+    </script>
+</body>
+</html>
